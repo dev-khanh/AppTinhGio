@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "594939316862",
+    "firebase_url": "https://apptinhgio-default-rtdb.firebaseio.com",
+    "project_id": "apptinhgio",
+    "storage_bucket": "apptinhgio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594939316862:android:f75956a30af82cd739262f",
+        "android_client_info": {
+          "package_name": "com.apptinhgio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594939316862-340c4312gr12i7us08ueqpk9p5149rda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBf2udc2VRkl3379kk77bxBwksNjkmZaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594939316862-340c4312gr12i7us08ueqpk9p5149rda.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "594939316862-987ma5ke8o2qnkap7s2fpg5bdnjkh3mv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apptinhgio"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
