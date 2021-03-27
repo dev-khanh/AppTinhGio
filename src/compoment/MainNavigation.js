@@ -30,7 +30,7 @@ const MainNavigation = ({
       <ImageBackground
         source={{
           uri:
-            'https://firebasestorage.googleapis.com/v0/b/apptinhgio.appspot.com/o/images.jpge?alt=media&amp;token=5dde9fe3-c9c2-4149-94cb-139f234646f1',
+            'https://f10.photo.talk.zdn.vn/2949676378330737879/5949cfe9f60b05555c1a.jpg',
         }}
         style={styles.customImages}>
         <Text style={styles.customTextInside}>Khánh ❤ Trà</Text>
@@ -41,9 +41,7 @@ const MainNavigation = ({
           selectedValue={selectedValue}
           style={styles.customPiker}
           mode="dialog"
-          onValueChange={(itemValue, itemIndex) => {
-            setSelectedValue(itemValue);
-          }}>
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>
           <Picker.Item label="Tháng 1" value="thang1" />
           <Picker.Item label="Tháng 2" value="thang2" />
           <Picker.Item label="Tháng 3" value="thang3" />
@@ -71,13 +69,14 @@ const MainNavigation = ({
   );
 };
 const styles = StyleSheet.create({
-  customPiker: {height: 50, width: 140},
+  customPiker: {flex: 1},
   flex7: {
     flex: 1,
-    marginRight: 10,
-    marginTop: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    // marginRight: 10,
+    // marginTop: 10,
+    // flexDirection: 'row',
+    // justifyContent: 'space-around',
+    // backgroundColor: 'red',
   },
   containers: {
     flex: 1,
@@ -93,7 +92,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000a0',
   },
   customImages: {
-    flex: 1,
+    // flex: 1,
+    height: 400,
     backgroundColor: 'red',
     resizeMode: 'cover',
   },
@@ -103,6 +103,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     width: 125,
     height: 40,
+    position: 'absolute',
+    top: 0,
+    right: 0,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,

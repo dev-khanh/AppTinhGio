@@ -4,6 +4,8 @@ import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/Fontisto';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const {height} = Dimensions.get('window');
+Icon.loadFont();
+
 export default ({
   children,
   visible,

@@ -11,7 +11,7 @@ import {
 import {
   formatDate,
   formatTime,
-  formatDateTime,
+  formatDateTimeTatoll,
   timeConvert,
 } from '../saga/libs';
 
@@ -32,13 +32,13 @@ const connectAPI = (dispatch) => {
           date: formatDate(date),
           timedb: formatTime(timeBD),
           timekt: formatTime(timeKT),
-          timekq: timeConvert(formatDateTime(timeBD, timeKT)),
-          tien: (formatDateTime(timeBD, timeKT) * 18000) / 60,
+          timekq: timeConvert(formatDateTimeTatoll(timeBD, timeKT)),
+          tien: (formatDateTimeTatoll(timeBD, timeKT) * 20000) / 60,
         }),
       );
       dispatch({
         type: UP_STATE_POST_USER,
-        timekq: timeConvert(formatDateTime(timeBD, timeKT)),
+        timekq: timeConvert(formatDateTimeTatoll(timeBD, timeKT)),
       });
     },
     setSelectedValue: (selectMom) => {

@@ -1,8 +1,13 @@
 import {StyleSheet} from 'react-native';
+import {IS_IOS} from '../../utils/helper';
 export default StyleSheet.create({
-  flex: {flex: 1},
+  flex: {
+    flex: IS_IOS ? 0 : 1,
+    margin: IS_IOS ? 5 : 0,
+  },
   containerGroub: {
-    flex: 1,
+    // flex: 1,
+    height: 230,
     backgroundColor: 'yellow',
     padding: 10,
   },
@@ -48,7 +53,7 @@ export default StyleSheet.create({
     position: 'absolute',
     left: 10,
     bottom: 0,
-    height: 40,
+    height: IS_IOS ? 60 : 40,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,

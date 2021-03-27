@@ -61,9 +61,9 @@ export const timeConverts = (n) => {
 // return
 export const formatDate = (date) =>
   date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
-export const formatDateTime = (startDate, endDate) =>
-  (parseDayTime(endDate).getHours() - parseDayTime(startDate).getHours()) * 60 -
-  (parseDayTime(startDate).getMinutes() - parseDayTime(endDate).getMinutes());
+// export const formatDateTime = (startDate, endDate) =>
+//   (parseDayTime(endDate).getHours() - parseDayTime(startDate).getHours()) * 60 -
+//   (parseDayTime(startDate).getMinutes() - parseDayTime(endDate).getMinutes());
 export const sortDate = (arraysBloc) =>
   arraysBloc.sort(
     (a, b) => new Date(b.date).getDate() - new Date(a.date).getDate(),
@@ -73,3 +73,6 @@ export const fecthData = (month, mCheckdata) =>
     (mCheckdata ? '/cafe/' : '/users/') +
       (month.toString().includes('thang') ? month : 'thang' + month),
   );
+
+export const formatDateTimeTatoll = (star, end) =>
+  (new Date(end).getTime() - new Date(star).getTime()) / 60000;

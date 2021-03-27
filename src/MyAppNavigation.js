@@ -6,9 +6,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeContainer from './container/HomeContainer';
 import ListContainer from './container/ListContainer';
 import DetailsContainer from './container/DetailsContainer';
-
 import LoginUser from './compoment/LoginUser';
 import {connect} from 'react-redux';
+Icon.loadFont();
 const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
@@ -53,7 +53,6 @@ function TabsNavigation() {
 }
 const Stack = createStackNavigator();
 function DemoStack({selectedValue}) {
-  console.log(': ', selectedValue);
   return (
     <Stack.Navigator>
       <Stack.Screen

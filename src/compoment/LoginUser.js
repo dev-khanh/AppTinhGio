@@ -18,7 +18,10 @@ export default ({navigation}) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={{uri: 'https://i.redd.it/ravmjkbpojg21.jpg'}}
+        source={{
+          uri:
+            'https://cdn.inprnt.com/thumbs/13/07/13074f114ffeca06c6514b989b399395.jpg',
+        }}
         style={styles.customImagesBackGourd}>
         <View style={styles.viewContainer}>
           <TextInput

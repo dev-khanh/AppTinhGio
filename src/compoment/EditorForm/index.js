@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './style';
 import moment from 'moment';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import {IS_IOS} from '../../utils/helper';
 
 export default ({sendRename, timekq, chooseIndex, selectedValue, check}) => {
   const [showDate, setShowDate] = useState(false);
@@ -27,66 +28,107 @@ export default ({sendRename, timekq, chooseIndex, selectedValue, check}) => {
   };
   return (
     <View style={styles.containerGroub}>
-      <View style={styles.viewCustom}>
-        <TouchableOpacity
-          style={styles.customTouchOpacity}
-          onPress={() => setShowDate(true)}>
-          <Text style={styles.textStyle2}>Nhập Ngày: </Text>
-        </TouchableOpacity>
-        <Text style={styles.customText}>
-          {moment(date).format('DD-MM-YYYY')}
-        </Text>
-        {showDate && (
-          <DateTimePicker
-            style={styles.flex}
-            testID="dateTimePicker"
-            value={date}
-            mode="date"
-            is24Hour={true}
-            display="default"
-            onChange={onChange}
-          />
-        )}
-      </View>
-      <View style={styles.customVuewTime}>
-        <TouchableOpacity
-          style={styles.customTouchOpacity}
-          onPress={() => setShowTimeBD(true)}>
-          <Text style={styles.textStyle2}>Thời Gian BD: </Text>
-        </TouchableOpacity>
-        <Text style={styles.customText}>{moment(timeDB).format('h:mm a')}</Text>
-
-        {showTimeBD && (
-          <DateTimePicker
-            style={styles.flex}
-            testID="dateTimePicker"
-            value={timeDB}
-            mode="time"
-            is24Hour={true}
-            display="default"
-            onChange={onChangeTimeDB}
-          />
-        )}
-      </View>
-      <View style={styles.customVuewTime}>
-        <TouchableOpacity
-          style={styles.customTouchOpacity}
-          onPress={() => setShowTimeKT(true)}>
-          <Text style={styles.textStyle2}>Thời Gian KT: </Text>
-        </TouchableOpacity>
-        <Text style={styles.customText}>{moment(timeKT).format('h:mm a')}</Text>
-        {showTimeKT && (
-          <DateTimePicker
-            style={styles.flex}
-            testID="dateTimePicker"
-            value={timeKT}
-            mode="time"
-            is24Hour={true}
-            display="default"
-            onChange={onChangeTimeKT}
-          />
-        )}
-      </View>
+      {IS_IOS ? (
+        <DateTimePicker
+          style={styles.flex}
+          testID="dateTimePicker"
+          value={date}
+          mode="date"
+          is24Hour={true}
+          display="default"
+          onChange={onChange}
+        />
+      ) : (
+        <View style={styles.viewCustom}>
+          <TouchableOpacity
+            style={styles.customTouchOpacity}
+            onPress={() => setShowDate(true)}>
+            <Text style={styles.textStyle2}>Nhập Ngày: </Text>
+          </TouchableOpacity>
+          <Text style={styles.customText}>
+            {moment(date).format('DD-MM-YYYY')}
+          </Text>
+          {showDate && (
+            <DateTimePicker
+              style={styles.flex}
+              testID="dateTimePicker"
+              value={date}
+              mode="date"
+              is24Hour={true}
+              display="default"
+              onChange={onChange}
+            />
+          )}
+        </View>
+      )}
+      {IS_IOS ? (
+        <DateTimePicker
+          style={styles.flex}
+          testID="dateTimePicker"
+          value={timeDB}
+          mode="time"
+          is24Hour={false}
+          display="default"
+          locale={'en_GB'}
+          onChange={onChangeTimeDB}
+        />
+      ) : (
+        <View style={styles.customVuewTime}>
+          <TouchableOpacity
+            style={styles.customTouchOpacity}
+            onPress={() => setShowTimeBD(true)}>
+            <Text style={styles.textStyle2}>Thời Gian BD: </Text>
+          </TouchableOpacity>
+          <Text style={styles.customText}>
+            {moment(timeDB).format('h:mm a')}
+          </Text>
+          {showTimeBD && (
+            <DateTimePicker
+              style={styles.flex}
+              testID="dateTimePicker"
+              value={timeDB}
+              mode="time"
+              is24Hour={true}
+              display="default"
+              onChange={onChangeTimeDB}
+            />
+          )}
+        </View>
+      )}
+      {IS_IOS ? (
+        <DateTimePicker
+          style={styles.flex}
+          testID="dateTimePicker"
+          value={timeKT}
+          mode="time"
+          is24Hour={true}
+          display="default"
+          locale={'en_GB'}
+          onChange={onChangeTimeKT}
+        />
+      ) : (
+        <View style={styles.customVuewTime}>
+          <TouchableOpacity
+            style={styles.customTouchOpacity}
+            onPress={() => setShowTimeKT(true)}>
+            <Text style={styles.textStyle2}>Thời Gian KT: </Text>
+          </TouchableOpacity>
+          <Text style={styles.customText}>
+            {moment(timeKT).format('h:mm a')}
+          </Text>
+          {showTimeKT && (
+            <DateTimePicker
+              style={styles.flex}
+              testID="dateTimePicker"
+              value={timeKT}
+              mode="time"
+              is24Hour={true}
+              display="default"
+              onChange={onChangeTimeKT}
+            />
+          )}
+        </View>
+      )}
       {ennable ? (
         <TouchableOpacity
           style={styles.touchableOpa}
